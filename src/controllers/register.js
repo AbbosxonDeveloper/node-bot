@@ -1,6 +1,6 @@
 import bot from "../config/bot.config.js";
 
-export default bot.onText(/\/start/, (msg) => {
+const register = bot.onText(/\/start/, (msg) => {
     bot.sendSticker(
         msg.chat.id,
         "CAACAgQAAxkBAANWY2QEPlzq3vim0i9HELYo0hRrhwkAAhUDAAIv2CUOAnTLZ07ySQMqBA"
@@ -17,4 +17,14 @@ export default bot.onText(/\/start/, (msg) => {
             resize_keyboard: true,
         },
     });
-});
+})
+
+const check = bot.onText(/\/message/, (msg) => {
+    bot.sendMessage(msg.chat.id, 'message bu')
+})
+
+
+export default {
+    register,
+    check
+}
